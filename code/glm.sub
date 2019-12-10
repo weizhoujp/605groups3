@@ -1,0 +1,17 @@
+universe = vanilla
+log = project.log
+error = error/project_$(Process).err
+output = out/project_$(Process).out
+
+executable = ./glm.sh
+arguments = $(folder)
+
+should_transfer_files = YES
+when_to_transfer_output = ON_EXIT
+transfer_input_files = /home/zhang2329/Project/$(folder).tar, http://proxy.chtc.wisc.edu/SQUID/chtc/R361.tar.gz, glm.R, folder.txt
+
+request_cpus = 2
+request_memory = 10GB
+request_disk = 1GB
+
+queue folder from folder.txt
